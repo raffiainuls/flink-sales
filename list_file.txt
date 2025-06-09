@@ -1,0 +1,11 @@
+table.public.tbl_branch,df_branch.csv
+table.public.tbl_customers,df_cust.csv
+table.public.tbl_employee,df_employee.csv
+table.public.tbl_order_status,df_order_status.csv
+table.public.tbl_payment_method,df_payment_method.csv
+table.public.tbl_product,df_product.csv
+table.public.tbl_promotions,df_promotions.csv
+table.public.tbl_sales,df_sales.csv
+table.public.tbl_schedulle_employee,df_schedule.csv
+table.public.tbl_shipping_status,df_shipping_status.csv
+table.public.tbl_payment_status,df_payment_status.csv
