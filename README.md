@@ -150,12 +150,21 @@ This project is a Streaming data pipeline project that the output is a dashbord.
 ### Steps 
 1. clone this repository
    ```bash
-   https://github.com/raffiainuls/pipeline-sales
-   cd pipeline-sales
-   cd docker
-   
-
-
+   https://github.com/raffiainuls/flink-sales
+2. prepare zookeeper & kafka first, and make sure your zookeeper and kafka allredy running correctly
+3. start all container or up docker compose file
+      ```bash
+   docker-compose up
+4. wait until the all container already running correctly, you can running ```/flink-sales/database/producer.py``` this file will send data in csv file that lists in list_file.txt into kafka
+5. you can check is the topics already in kafka, you can use confluent control center for checking topics go to ```localhost:9091```
+6. if all topics for each table already available in kafka you can run ```/flink-sales/stream.py``` this file will generate data streaming into topic tbl_sales in kafka. in this python script there is some calculations metrics for generate value in some field, so the value that produce not too random.
+7. in this project all job for etl streaming are in the directory ```/flink-sales/flink-job/``` there is 13 where each job is a query that forms the table.
+8.  where the work structure for each job will have a query tht will retrieve data from several tables, therefore before executing the query, an env table will be created first for the tables needed. For example for the fact_sales table, the env table will be created first for fact_sales itself, then an env table will also be created for several reference table such as tbl_sales, tbl_product, and tbl_branch. after that the fact_sales query will be executed
+9.  the functions for each job will be in the directory of each job in the lib.py file and the functions for each job will be called in the main python file executor for each job in the flink-job directory the the file name matches the job name or table name.
+10.  To carry out each job, we need to apply the job to flink in this way go to job manager bash
+   ```bash
+   https://github.com/raffiainuls/flink-sales
+2. prepare zookeeper & kafka first, and make sure your zookeeper and kafka allredy running correctly
 
   
 
