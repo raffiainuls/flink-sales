@@ -102,19 +102,19 @@ This project is a Streaming data pipeline project that the output is a dashbord.
             |-- __init__.py
             |-- lib.py
        |-- init.py
-       |-- branch_daily_finance_performance.py
-       |-- branch_finance_performance.py
-       |-- branch_monthly_finance_performance.py
-       |-- branch_performance.py
-       |-- branch_weeakly_finance_performance.py
-       |-- daily_finance_performance.py
-       |-- fact_employee.py
-       |-- fact_sales.py
-       |-- finance_performance.py
-       |-- monthly_branch_performance.py
-       |-- monthly_finance_performance.py
-       |-- sum_transactions.py
-       |-- weeakly_finance_performance.py
+       |-- branch_daily_finance_performance.py        # Python main executor for table branch_daily_finance_performance
+       |-- branch_finance_performance.py              # Python main executor for table branch_finance_performance
+       |-- branch_monthly_finance_performance.py      # Python main executor for table branch_monthly_finance_performance
+       |-- branch_performance.py                      # Python main executor for table branch_performance
+       |-- branch_weeakly_finance_performance.py      # Python main executor for table branch_weeakly_finance_performance
+       |-- daily_finance_performance.py               # Python main executor for table daily_finance_performance
+       |-- fact_employee.py                           # Python main executor for table fact_employee
+       |-- fact_sales.py                              # Python main executor for table fact_sales
+       |-- finance_performance.py                     # Python main executor for table finance_performance
+       |-- monthly_branch_performance.py              # Python main executor for table monthly_branch_performance
+       |-- monthly_finance_performance.py             # Python main executor for table monthly_finance_performance
+       |-- sum_transactions.py                        # Python main executor for table sum_transactions
+       |-- weeakly_finance_performance.py             # Python main executor for table weeakly_finance_performance
    |-- grafana-data/               # Directory volumes mapping grafana 
    |-- kafka/                      # Directory configurasi kafka
    |-- lib/                        # Directory plugins jar for docker kafka connect 
