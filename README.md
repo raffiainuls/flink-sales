@@ -162,9 +162,29 @@ This project is a Streaming data pipeline project that the output is a dashbord.
 8.  where the work structure for each job will have a query tht will retrieve data from several tables, therefore before executing the query, an env table will be created first for the tables needed. For example for the fact_sales table, the env table will be created first for fact_sales itself, then an env table will also be created for several reference table such as tbl_sales, tbl_product, and tbl_branch. after that the fact_sales query will be executed
 9.  the functions for each job will be in the directory of each job in the lib.py file and the functions for each job will be called in the main python file executor for each job in the flink-job directory the the file name matches the job name or table name.
 10.  To carry out each job, we need to apply the job to flink in this way go to job manager bash
-   ```bash
-   https://github.com/raffiainuls/flink-sales
-2. prepare zookeeper & kafka first, and make sure your zookeeper and kafka allredy running correctly
+      ```bash
+      docker exec -it jobmanager bash
+11. and then apply job to jobmanager with this command
+      ```bash
+      flink run -py /opt/flink/job/fact_sales.py
+12. the example above runs a job for fact_sales table, then do it for all existing jobs or tables.
+13. after the all job alredy running correctly, we can check to the kafka topics there will be new topics for each job or table.
+14. for next step we should sink our topic to the clickhouse with connector clickhouse in kafka connect but before postting the connector for each table, we must unsure that the tables are availabe on clickhouse, note for ddl for each table there are available in ```/flink-sales/ddl-table-clickhouse/``` 
+15. post the connecotr on our kafka connect, use curl for post the connector or we can also use postman to post the connector, if use curl copy the command bellow
+```bash
+curl -X POST http://localhost:8083/connectors \
+     -H "Content-Type: application/json" \
+     -d @fact_sales_sink.json
+```
+16. file json configurations for each connector table already available in /flink-sales/connector-clickhouse
+17. if the data for each table already available in clickhouse, means we have finished the data pipeline stageup to the clickhouse. we just have to create a table in grafana.
+18. go to grafana web server and then add new plugins data source ```clickhouse plugins``` and then fill the configuration server clickhouse database.
+19. if you up the container grafana in this repository maybe in your grafana already available dashbord for streaming data but if you dont't have one, you can make it yourself with your own style. 
+
+
+
+
+
 
   
 
