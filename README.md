@@ -43,62 +43,62 @@ This project is a Streaming data pipeline project that the output is a dashbord.
        |-- df_shipping_status.csv
        |-- list_file.txt         # this file is useful for producer.py can know which csv file is used for create datapipeline into kafka             
        |-- producer.py           # this python file will send data from csv file in list_file.txt to kafka topics 
-   |-- flink-job/  
-       |-- branch_daily_finance_performance/   
+   |-- flink-job/                 # directory volumes mapping for job flink 
+       |-- branch_daily_finance_performance/      # directory lib function for table branch_daily_finance_performance 
             |-- __init__.py
             |-- lib.py
-       |-- branch_finance_performanc/   
+       |-- branch_finance_performanc/             # directory lib function for table branch_finance_performance 
             |-- __init__.py
             |-- lib.py
-       |-- branch_monthly_finance_performance/   
+       |-- branch_monthly_finance_performance/    # directory lib function for table branch_monthly_finance_performance 
             |-- __init__.py
             |-- lib.py
        |-- branch_performance/   
             |-- __init__.py
             |-- lib.py
-       |-- branch_weeakly_finance_performance/   
+       |-- branch_weeakly_finance_performance/     # directory lib function for table branch_weeakly_finance_performance 
             |-- __init__.py
             |-- lib.py
-       |-- daily_finance_performance/   
+       |-- daily_finance_performance/              # directory lib function for table daily_finance_performance 
             |-- __init__.py
             |-- lib.py
-       |-- fact_employee/   
+       |-- fact_employee/                          # directory lib function for table fact_employee 
             |-- __init__.py
             |-- lib.py
-       |-- fact_sales/   
+       |-- fact_sales/                             # directory lib function for table fact_sales
             |-- __init__.py
             |-- lib.py
-       |-- helper/   
+       |-- helper/                                 # directory helper that containing function_funcition that leverage for this project
             |-- __init__.py
             |-- function.py
-       |-- monthly_branch_performance/   
+       |-- monthly_branch_performance/             # directory lib function for table monthly_branch_performance
             |-- __init__.py
             |-- lib.py
-       |-- monthly_finance_performance/   
+       |-- monthly_finance_performance/            # directory lib function for table monthly_finance_performance 
             |-- __init__.py
             |-- lib.py
-       |-- product_performance/   
+       |-- product_performance/                    # directory lib function for table product_performance
             |-- __init__.py
             |-- lib.py
-       |-- sum_transactions/   
+       |-- sum_transactions/                       # directory lib function for table sum_transactions
             |-- __init__.py
             |-- lib.py
-       |-- tbl_branch/   
+       |-- tbl_branch/                             # directory lib function for table tbl_branch
             |-- __init__.py
             |-- lib.py
-       |-- tbl_employee/   
+       |-- tbl_employee/                           # directory lib function for table tbl_employee
             |-- __init__.py
             |-- lib.py
-       |-- tbl_product/   
+       |-- tbl_product/                            # directory lib function for table tbl_product
             |-- __init__.py
             |-- lib.py
-       |-- tbl_promotions/   
+       |-- tbl_promotions/                         # directory lib function for table tbl_promotions
             |-- __init__.py
             |-- lib.py
-       |-- tbl_sales/   
+       |-- tbl_sales/                              # directory lib function for table tbl_sales
             |-- __init__.py
             |-- lib.py
-       |-- weeakly_finance_performance/   
+       |-- weeakly_finance_performance/            # directory lib function for table weeakly_finance_performance 
             |-- __init__.py
             |-- lib.py
        |-- init.py
