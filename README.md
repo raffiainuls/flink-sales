@@ -176,7 +176,7 @@ curl -X POST http://localhost:8083/connectors \
      -H "Content-Type: application/json" \
      -d @fact_sales_sink.json
 ```
-16. file json configurations for each connector table already available in /flink-sales/connector-clickhouse
+16. file json configurations for each connector table already available in ```/flink-sales/connector-clickhouse```
 17. if the data for each table already available in clickhouse, means we have finished the data pipeline stageup to the clickhouse. we just have to create a table in grafana.
 18. go to grafana web server and then add new plugins data source ```clickhouse plugins``` and then fill the configuration server clickhouse database.
 19. if you up the container grafana in this repository maybe in your grafana already available dashbord for streaming data but if you dont't have one, you can make it yourself with your own style. 
