@@ -124,13 +124,37 @@ This project is a Streaming data pipeline project that the output is a dashbord.
    |-- last_id_backup              # backup list_id file
    |-- last_id.txt                 # this file save last_id that most_recent create in stream.py 
    |-- stream.py                   # file python that create data streaming and send into kafka 
-
+ </pre>
 
 
 ### Project Workflow 
 
 1. Producer Kafka
-   - python script (/flink-sales/database/producer.py) will read list file csv in list_file.txt that containing database tables that saves into csv, and then from the list file csv python script will access csv file and then produce data in file csv into kafka. table that send to kafka such as : ```tbl_order_status, tbl_payment_method, tb_payment_status, tbl_shipping_status, tbl_employee, tbl_promotions, tbl_sales, tbl_product, tbl_schedulle_emp, tbl_customers, and tbl_branch``` 
+   - python script (/flink-sales/database/producer.py) will read list file csv in list_file.txt that containing database tables that saves into csv, and then from the list file csv python script will access csv file and then produce data in file csv into kafka. table that send to kafka such as : ```tbl_order_status, tbl_payment_method, tb_payment_status, tbl_shipping_status, tbl_employee, tbl_promotions, tbl_sales, tbl_product, tbl_schedulle_emp, tbl_customers, and tbl_branch```
+2. Stream Data Generation
+   - This python script if it run will generate data and produce data into kafka topics table tbl_sales, this python script also have metrics thatis adjusted to the table in the csv file that was previously sent to kafka, so the generated data contains several calculations for several fields so that the data produced is not too random.
+3. Flink Python Job
+   - in directory /flink-sales/flink-job/  it is directory volumes mapping to container flink jobmanager in this directory there is all job that make table env for each table and execute query to insert data into the table env for each table.
+4. Connector Clickhouse Kafka Connect
+   - in directory /flink-sales/connector/ there is  some json file which is configuration connector that send data from kafka topics into clickhouse database
+5. Dashbord Grafana
+   - In this project i use simple dashbord with grafana because in grafana there is official plugins data source from clickhouse
+
+### Instalation & Setup 
+#### Prerequisites 
+- Docker & Docker Compose
+- Kafka & zookeeper (in this project i use kafka and zookeeper in local windows)
+- Images Docker debezium, Apache Flink, Clickhouse, Grafana
+- Python
+
+### Steps 
+1. clone this repository
+   ```bash
+   https://github.com/raffiainuls/pipeline-sales
+   cd pipeline-sales
+   cd docker
+   
+
 
 
   
