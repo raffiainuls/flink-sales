@@ -1,0 +1,17 @@
+{
+  "name": "branch_finance_performance",
+  "config": {
+    "connector.class": "com.clickhouse.kafka.connect.ClickHouseSinkConnector",
+    "hostname": "clickhouse-server",
+    "tasks.max": "1",
+    "topics": "branch_finance_performance",
+    "database": "default",
+    "auto.create": "true",
+    "password": "",
+    "port": "8123",
+    "consumer.override.max.poll.records": "5000",
+    "mode": "upsert",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}

@@ -2,9 +2,4 @@ kafka:
   broker: "localhost:9093"
   topic_name: "table.public.tbl_sales"
 
-postgres:
-  host: "localhost"
-  port: 5432
-  database: "postgres"
-  user: "postgres"
-  password: "postgres"
+
