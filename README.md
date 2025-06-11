@@ -6,7 +6,7 @@
 This project is a Streaming data pipeline project that the output is a dashbord. This project using kafka for real-time data streaming and Apache Flink for ETL Streaming for execute query table, and then clickhouse for database, and grafane for creating dashbord.
 
 #### Features 
-- Producer Kafka: Python script generates table sales data and save it as csv
+- Producer Kafka: Python script read data table from csv and produce into kafka topics
 - Stream Data Generation: Python script that streaming or produce data into kafka
 - Flink Python Job: Python Job Flink for execute table-table query
 - Connector Kafka Connect: Connector clickhouse kafka connect that insert data from kafka into clickhouse
